@@ -216,30 +216,33 @@
                     </div>
 
                     <!-- 4. Platinum Exterior -->
-                    <div onclick="togglePackage(this)" class="group p-8 rounded-3xl bg-neutral-900 border border-white/5 hover:border-blue-600/40 transition-all cursor-pointer flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="text-2xl">💿</div>
-                                <span class="arrow text-gray-600 group-hover:text-blue-500 font-bold transition-transform text-lg">↓</span>
-                            </div>
-                            <h4 class="text-xl font-bold uppercase italic tracking-tighter text-blue-400 select-none">Platinum - Exterior Detailing</h4>
-                            <div class="package-details hidden mt-4 pt-4 border-t border-white/5">
-                                <ul class="text-gray-400 space-y-2 text-sm font-medium">
-                                    <li>• Machine body polish</li>
-                                    <li>• Window polish</li>
-                                    <li>• Water spot removal</li>
-                                    <li>• Minor scratch removal</li>
-                                    <li>• Tire deep cleaning, Tire black finish</li>
-                                    <li>• Plastic shine protection</li>
-                                    <li>• Head light Restoration</li>
-                                </ul>
-                                <div class="rounded-xl overflow-hidden border border-white/10 bg-black aspect-video mt-4">
-                        <video src="exterior.mp4" controls preload="metadata" class="w-full h-full object-cover" onclick="event.stopPropagation();">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
+                    <div onclick="togglePackage(this)" class="group p-8 rounded-3xl bg-neutral-900 border border-white/5 hover:border-blue-500 transition-all duration-300 cursor-pointer min-w-0">
+    <div>
+        <div class="flex justify-between items-start mb-4">
+            <div class="text-2xl">🔘</div>
+            <span class="arrow text-gray-600 group-hover:text-blue-500 font-bold transition-transform text-lg">↓</span>
+        </div>
+        
+        <h4 class="text-xl font-bold uppercase italic tracking-tighter text-blue-400 select-none">Platinum - Exterior Detailing</h4>
+        
+        <div class="package-details hidden mt-4 pt-4 border-t border-white/5">
+            <ul class="text-gray-400 space-y-2 text-sm font-medium">
+                <li>• Machine body polish</li>
+                <li>• Window polish</li>
+                <li>• Water spot removal</li>
+                <li>• Minor scratch removal</li>
+                <li>• Tire deep cleaning, Tire black finish</li>
+                <li>• Plastic shine protection</li>
+                <li>• Head light Restoration</li>
+            </ul>
+            
+            <!-- Fixed Video Container with strict layout controls -->
+            <div class="rounded-xl overflow-hidden border border-white/10 bg-black aspect-video mt-4 min-w-0">
+                <video src="exterior.mp4" preload="metadata" muted playsinline loop class="w-full h-full object-cover block min-w-0" onclick="event.stopPropagation();"></video>
             </div>
+        </div>
+    </div>
+</div>
 
                     <!-- 5. Platinum - Interior Detailing -->
             <div onclick="togglePackage(this)" class="group p-8 rounded-3xl bg-neutral-900 border border-white/5 hover:border-blue-600/40 transition-all cursor-pointer flex flex-col justify-between h-fit">
