@@ -13,18 +13,23 @@
         
         <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
             <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 relative cursor-pointer select-none" onclick="toggleLogoMenu(event)">
                     <img src="mlogo.jpg" alt="Melona Logo" class="w-12 h-12 rounded-full border-2 border-blue-600">
                     <div class="flex flex-col items-start leading-none">
                         <span class="font-black text-2xl tracking-tight text-white uppercase">MELONA</span>
                         <span class="text-xs font-semibold text-sky-400 tracking-wider lowercase">car wash</span>
+                    </div>
+                    <div id="logoDropdownMenu" class="hidden absolute top-full left-0 mt-3 bg-neutral-900 border border-white/10 rounded-2xl p-4 shadow-2xl w-44 flex flex-col gap-2 z-50 animate-fadeIn">
+                        <a href="#about" class="text-xs font-bold text-gray-300 hover:text-blue-500 transition-colors uppercase tracking-wider py-1">About</a>
+                        <a href="#services" class="text-xs font-bold text-gray-300 hover:text-blue-500 transition-colors uppercase tracking-wider py-1">Services</a>
+                        <a href="#reviews" class="text-xs font-bold text-gray-300 hover:text-blue-500 transition-colors uppercase tracking-wider py-1">Reviews</a>
                     </div>
                 </div>
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
                     <a href="#about" class="hover:text-blue-500 transition-colors">About</a>
                     <a href="#services" class="hover:text-blue-500 transition-colors">Services</a>
                     <a href="#reviews" class="hover:text-blue-500 transition-colors">Reviews</a>
-                    <a href="tel:+251911234567" class="px-5 py-2 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors font-bold text-center">Call Now</a>
+                    <a href="tel:+251989549475" class="px-5 py-2 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors font-bold text-center">Call Now</a>
                 </div>
             </div>
         </nav>
@@ -43,7 +48,7 @@
                 <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium">ሜሎና ዘመናዊ የመኪና እጥበት እና ዲቴሊንግ አገልግሎት</p>
                 <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
                     <button onclick="openBookingModal()" class="w-full md:w-auto px-8 py-4 bg-blue-600 font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-md rounded-full">BOOK NOW</button>
-                    <a href="https://maps.google.com/?q=Melona+Car+Wash+Bole+Gerji+Mebrat+Haile+Addis+Ababa" target="_blank" class="w-full md:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold uppercase tracking-widest backdrop-blur-sm transition-all border border-white/10 hover:border-white/30 text-center">Get Directions</a>
+                    <a href="https://maps.app.goo.gl/KfjhqH9jaNr1NVuC9?g_st=ac" target="_blank" class="w-full md:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold uppercase tracking-widest backdrop-blur-sm transition-all border border-white/10 hover:border-white/30 text-center">Get Directions</a>
                 </div>
                 <div class="mt-16 flex items-center justify-center gap-2">
                     <div class="flex">
@@ -106,57 +111,57 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start border-t border-white/5 pt-4">
                         
-                        <div class="md:col-span-5 bg-white text-gray-800 rounded-2xl p-4 shadow-md w-full max-w-[280px] mx-auto md:max-w-none">
+                        <div class="md:col-span-5 bg-neutral-900 text-gray-300 border border-white/10 rounded-2xl p-4 shadow-md w-full max-w-[280px] mx-auto md:max-w-none">
                             <div class="flex items-center justify-between mb-4 px-1">
-                                <button type="button" class="text-gray-400 hover:text-gray-600 border border-gray-200 w-7 h-7 rounded flex items-center justify-center text-sm font-bold"><</button>
-                                <span class="font-bold text-xs text-gray-700 uppercase tracking-wide">June 2026</span>
-                                <button type="button" class="text-gray-400 hover:text-gray-600 border border-gray-200 w-7 h-7 rounded flex items-center justify-center text-sm font-bold">></button>
+                                <button type="button" class="text-gray-500 hover:text-white border border-white/10 w-7 h-7 rounded flex items-center justify-center text-sm font-bold"><</button>
+                                <span class="font-bold text-xs text-white uppercase tracking-wide">June 2026</span>
+                                <button type="button" class="text-gray-500 hover:text-white border border-white/10 w-7 h-7 rounded flex items-center justify-center text-sm font-bold">></button>
                             </div>
                             
-                            <div class="grid grid-cols-7 text-center text-[10px] font-bold text-gray-400 mb-2">
+                            <div class="grid grid-cols-7 text-center text-[10px] font-bold text-gray-500 mb-2">
                                 <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
                             </div>
                             
-                            <div id="calendarDaysGrid" class="grid grid-cols-7 gap-y-2 text-center text-[11px] font-semibold text-gray-700 items-center">
-                                <div class="text-gray-300 pointer-events-none">31</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Monday, Jun 1')">1</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Tuesday, Jun 2')">2</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Wednesday, Jun 3')">3</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Thursday, Jun 4')">4</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Friday, Jun 5')">5</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Saturday, Jun 6')">6</div>
+                            <div id="calendarDaysGrid" class="grid grid-cols-7 gap-y-2 text-center text-[11px] font-semibold text-gray-400 items-center">
+                                <div class="text-neutral-700 pointer-events-none">31</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">1</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">2</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">3</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">4</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">5</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">6</div>
                                 
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Sunday, Jun 7')">7</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Monday, Jun 8')">8</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Tuesday, Jun 9')">9</div>
-                                <div class="bg-[#2563eb] text-white font-bold rounded-full flex items-center justify-center h-6 w-6 mx-auto shadow-sm cursor-pointer" onclick="selectCalendarDay(this, 'Wednesday, Jun 10')">10</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Thursday, Jun 11')">11</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Friday, Jun 12')">12</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Saturday, Jun 13')">13</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">7</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">8</div>
+                                <div class="text-neutral-700 pointer-events-none py-1">9</div>
+                                <div class="bg-[#2563eb] text-white font-bold rounded-full flex items-center justify-center h-6 w-6 mx-auto shadow-sm cursor-pointer" onclick="selectCalendarDay(this, 'Wednesday, Jun 10', 10)">10</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Thursday, Jun 11', 11)">11</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Friday, Jun 12', 12)">12</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Saturday, Jun 13', 13)">13</div>
                                 
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Sunday, Jun 14')">14</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Monday, Jun 15')">15</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Tuesday, Jun 16')">16</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Wednesday, Jun 17')">17</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Thursday, Jun 18')">18</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Friday, Jun 19')">19</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Saturday, Jun 20')">20</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Sunday, Jun 14', 14)">14</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Monday, Jun 15', 15)">15</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Tuesday, Jun 16', 16)">16</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Wednesday, Jun 17', 17)">17</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Thursday, Jun 18', 18)">18</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Friday, Jun 19', 19)">19</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Saturday, Jun 20', 20)">20</div>
                                 
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Sunday, Jun 21')">21</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Monday, Jun 22')">22</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Tuesday, Jun 23')">23</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Wednesday, Jun 24')">24</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Thursday, Jun 25')">25</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Friday, Jun 26')">26</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Saturday, Jun 27')">27</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Sunday, Jun 21', 21)">21</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Monday, Jun 22', 22)">22</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Tuesday, Jun 23', 23)">23</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Wednesday, Jun 24', 24)/">24</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Thursday, Jun 25', 25)">25</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Friday, Jun 26', 26)">26</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Saturday, Jun 27', 27)">27</div>
                                 
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Sunday, Jun 28')">28</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Monday, Jun 29')">29</div>
-                                <div class="cursor-pointer py-1 hover:bg-gray-100 rounded-full" onclick="selectCalendarDay(this, 'Tuesday, Jun 30')">30</div>
-                                <div class="text-gray-300 pointer-events-none">1</div>
-                                <div class="text-gray-300 pointer-events-none">2</div>
-                                <div class="text-gray-300 pointer-events-none">3</div>
-                                <div class="text-gray-300 pointer-events-none">4</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Sunday, Jun 28', 28)">28</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Monday, Jun 29', 29)">29</div>
+                                <div class="cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white" onclick="selectCalendarDay(this, 'Tuesday, Jun 30', 30)">30</div>
+                                <div class="text-neutral-700 pointer-events-none">1</div>
+                                <div class="text-neutral-700 pointer-events-none">2</div>
+                                <div class="text-neutral-700 pointer-events-none">3</div>
+                                <div class="text-neutral-700 pointer-events-none">4</div>
                             </div>
                         </div>
 
@@ -166,66 +171,68 @@
                             </h3>
                             
                             <div id="timeSlotsGrid" class="grid grid-cols-3 gap-2">
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">6:00 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">6:30 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">7:00 AM</button>
+                                <button type="button" data-hour="7.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">7:30 AM</button>
+                                <button type="button" data-hour="8" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">8:00 AM</button>
+                                <button type="button" data-hour="8.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">8:30 AM</button>
                                 
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">7:30 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">8:00 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">8:30 AM</button>
+                                <button type="button" data-hour="9" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">9:00 AM</button>
+                                <button type="button" data-hour="9.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">9:30 AM</button>
+                                <button type="button" data-hour="10" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">10:00 AM</button>
                                 
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">9:00 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">9:30 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#2563eb] text-white py-2 rounded-lg text-[11px] font-bold shadow-md ring-2 ring-blue-400 ring-offset-2 ring-offset-[#1a1a1a]">10:00 AM</button>
+                                <button type="button" data-hour="10.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">10:30 AM</button>
+                                <button type="button" data-hour="11" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">11:00 AM</button>
+                                <button type="button" data-hour="11.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">11:30 AM</button>
                                 
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">10:30 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">11:00 AM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">11:30 AM</button>
+                                <button type="button" data-hour="12" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">12:00 PM</button>
+                                <button type="button" data-hour="12.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">12:30 PM</button>
+                                <button type="button" data-hour="13" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">1:00 PM</button>
                                 
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">12:00 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">12:30 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">1:00 PM</button>
+                                <button type="button" data-hour="13.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">1:30 PM</button>
+                                <button type="button" data-hour="14" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">2:00 PM</button>
+                                <button type="button" data-hour="14.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">2:30 PM</button>
                                 
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">1:30 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">2:00 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">2:30 PM</button>
+                                <button type="button" data-hour="15" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">3:00 PM</button>
+                                <button type="button" data-hour="15.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">3:30 PM</button>
+                                <button type="button" data-hour="16" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">4:00 PM</button>
                                 
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">3:00 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">3:30 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">4:00 PM</button>
-                                
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">4:30 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">5:00 PM</button>
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">5:30 PM</button>
+                                <button type="button" data-hour="16.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">4:30 PM</button>
+                                <button type="button" data-hour="17" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">5:00 PM</button>
+                                <button type="button" data-hour="17.5" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">5:30 PM</button>
                             </div>
                             <div class="grid grid-cols-3 gap-2 mt-2">
-                                <button type="button" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">6:00 PM</button>
+                                <button type="button" data-hour="18" onclick="selectTimeSlot(this)" class="bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition">6:00 PM</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="border-t border-white/5 pt-4">
-                        <label class="block text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-2 text-center md:text-left">Verification Phone Number</label>
-                        <div class="relative max-w-sm mx-auto md:mx-0">
-                            <span class="absolute left-4 top-3 text-gray-500 font-medium text-sm">+251</span>
-                            <input type="tel" id="bookingPhone" required placeholder="912345678" pattern="[0-9]{9}" class="w-full bg-neutral-800 border border-white/10 rounded-xl pl-16 pr-4 py-2.5 text-white focus:outline-none focus:border-blue-500 text-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/5 pt-4">
+                        <div>
+                            <label class="block text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-2">Customer Full Name</label>
+                            <input type="text" id="bookingName" required placeholder="Enter full name" class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-2">Verification Phone Number</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500 font-medium text-sm">+251</span>
+                                <input type="tel" id="bookingPhone" required placeholder="912345678" pattern="[0-9]{9}" class="w-full bg-neutral-800 border border-white/10 rounded-xl pl-16 pr-4 py-2.5 text-white focus:outline-none focus:border-blue-500 text-sm">
+                            </div>
                         </div>
                     </div>
 
                     <div class="text-center border-t border-white/5 pt-4">
                         <p class="text-[11px] text-gray-500 mb-3">
-                            Enter your phone number to complete verification on the next step.
+                            Submit booking details straight to our team channel for verification.
                         </p>
                         
-                        <button type="submit" class="w-full bg-[#2563eb] text-white hover:bg-blue-700 transition font-bold py-3.5 px-6 rounded-full tracking-wider text-xs uppercase shadow-lg">
-                            Submit for Verification
+                        <button type="submit" class="w-full bg-[#2563eb] text-white hover:bg-blue-700 transition font-bold py-3.5 px-6 rounded-full tracking-wider text-xs uppercase shadow-lg mb-4">
+                            Submit to Telegram Channel
                         </button>
 
-                        <p class="text-[11px] text-gray-500 mt-4">
-                            Or reach us directly via 
-                            <a href="mailto:info@melonacarwash.com?subject=Booking%20Request" class="text-gray-400 underline hover:text-white transition mx-0.5">Email</a> 
+                        <p class="text-xs text-gray-400 font-medium tracking-wide">
+                            Alternatively, you can contact us via 
+                            <a href="mailto:Melonacarwash@gmail.com" class="text-blue-400 underline hover:text-blue-300 transition-colors">email</a> 
                             or 
-                            <a href="tel:+251911234567" class="text-gray-400 underline hover:text-white transition mx-0.5">Phone</a>
+                            <a href="tel:+251989549475" class="text-blue-400 underline hover:text-blue-300 transition-colors">phone</a>.
                         </p>
                     </div>
                 </form>
@@ -438,7 +445,7 @@
                 <div class="flex-1 space-y-6">
                     <h2 class="text-blue-600 font-bold tracking-widest uppercase">About Us</h2>
                     <h3 class="text-4xl font-black uppercase italic tracking-tighter">Addis Ababa's Most Trusted Detailers</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg">Located <a href="https://maps.google.com/?q=Melona+Car+Wash+Bole+Gerji+Mebrat+Haile+Addis+Ababa" target="_blank" class="text-blue-400 hover:underline">behind FBI Church on Bole Gerji Mebrat Haile Road</a>, Melona Car Wash & Detailing has built a reputation for excellence.</p>
+                    <p class="text-gray-400 leading-relaxed text-lg">Located <a href="https://maps.app.goo.gl/KfjhqH9jaNr1NVuC9?g_st=ac" target="_blank" class="text-blue-400 hover:underline">behind FBI Church on Bole Gerji Mebrat Haile Road</a>, Melona Car Wash & Detailing has built a reputation for excellence.</p>
                     <p class="text-gray-400 leading-relaxed">Our motto "Shine Like New" reflects our commitment to every vehicle that enters our facility. With a 4.954 Google rating, we are the preferred choice for car enthusiasts in Ethiopia.</p>
                     <div class="grid grid-cols-2 gap-6 pt-4">
                         <div>
@@ -464,7 +471,7 @@
                         <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                             <a href="https://www.tiktok.com/@melona.car.wash.detailin" target="_blank" class="px-8 py-4 bg-white text-black font-black rounded-full hover:bg-pink-500 hover:text-white transition-all uppercase tracking-widest flex items-center gap-3 group">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.32c7.87 33.32 31.74 60.39 63.06 73.56A121.48 121.48 0 0 0 448 109.48v100.43z"></path></svg>
-                                Follow @melona.car.wash.detailin
+                                Follow @melona.car.detail
                             </a>
                         </div>
                     </div>
@@ -478,18 +485,63 @@
             </div>
         </section>
 
+        <footer class="py-12 px-4 border-t border-white/10 bg-neutral-950 text-gray-400 text-sm">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="mlogo.jpg" alt="Melona Logo" class="w-10 h-10 rounded-full border border-blue-600">
+                    <div class="flex flex-col items-start leading-none">
+                        <span class="font-black text-lg tracking-tight text-white uppercase">MELONA</span>
+                        <span class="text-[10px] font-semibold text-sky-400 tracking-wider lowercase">car wash</span>
+                    </div>
+                </div>
+                <div class="text-center md:text-left space-y-1">
+                    <p class="font-medium text-white">Behind FBI Church, Bole Gerji Mebrat Haile Road</p>
+                    <p class="text-xs text-gray-500">Addis Ababa, Ethiopia</p>
+                </div>
+                <div class="text-center md:text-right space-y-1">
+                    <p>Phone: <a href="tel:+251989549475" class="text-blue-400 hover:underline">+251 983 072 304</a> / <a href="tel:+251989549475" class="text-blue-400 hover:underline">0989549475</a></p>
+                    <p>Email: <a href="mailto:Melonacarwash@gmail.com" class="text-blue-400 hover:underline">Melonacarwash@gmail.com</a></p>
+                    <p class="text-xs text-gray-500 mb-2">Open Daily until 8 PM</p>
+                    <div class="flex justify-center md:justify-end gap-4 pt-1">
+                        <a href="https://wa.me/message/Q4FGYJF5HWN6P1" target="_blank" class="text-green-400 hover:text-green-300 transition-colors font-bold text-xs uppercase tracking-wider">WhatsApp</a>
+                        <a href="https://www.facebook.com/share/1D7EGmPiwQ/?mibextid=qi2Omg" target="_blank" class="text-blue-500 hover:text-blue-400 transition-colors font-bold text-xs uppercase tracking-wider">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto text-center text-xs text-gray-600 border-t border-white/5 mt-8 pt-6">
+                © 2026 Melona Car Wash & Detailing. All rights reserved.
+            </div>
+        </footer>
+
     </div>
 
     <script>
-        // Memory variables tracking global modal user selection
+        // Track memory states globally
         let selectedDate = "Wednesday, Jun 10";
-        let selectedTime = "10:00 AM";
+        let selectedTime = ""; // Dynamic tracking
+        let selectedDayNum = 10; // Defaults to June 10th
+
+        // Toggle functionality for Logo drop down list
+        function toggleLogoMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('logoDropdownMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Auto collapse menu when user triggers viewport document interactions
+        document.addEventListener('click', function() {
+            const menu = document.getElementById('logoDropdownMenu');
+            if (menu) menu.classList.add('hidden');
+        });
 
         function openBookingModal() {
             const modal = document.getElementById('bookingModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
+            
+            // Re-evaluate time slots based on current actual clock time
+            validateAvailableTimeSlots();
         }
 
         function closeBookingModal() {
@@ -512,49 +564,92 @@
             }
         }
 
-        // Active State Controller for Calendar Day Grid Clicking
-        function selectCalendarDay(element, formattedString) {
-            // Find currently styled active calendar elements and normalize them
+        // Active State Controller for Calendar Day Clicking
+        function selectCalendarDay(element, formattedString, dayNum) {
             const gridItems = document.getElementById('calendarDaysGrid').children;
             for (let item of gridItems) {
+                // Clear out active tracking styles from previously checked elements
                 if (item.classList.contains('bg-[#2563eb]')) {
-                    item.className = "cursor-pointer py-1 hover:bg-gray-100 rounded-full";
+                    item.className = "cursor-pointer py-1 hover:bg-neutral-800 rounded-full text-white";
                 }
             }
             
-            // Apply blue badge theme classes to the newly targeted calendar day element
+            // Assign theme badge attributes to current target element
             element.className = "bg-[#2563eb] text-white font-bold rounded-full flex items-center justify-center h-6 w-6 mx-auto shadow-sm cursor-pointer";
             
-            // Sync states to screen displays and system memory references
             selectedDate = formattedString;
+            selectedDayNum = dayNum;
             document.getElementById('selectedDateDisplay').innerText = formattedString + ", 2026";
+            
+            // Reset and update real-time clock validation constraints
+            selectedTime = "";
+            validateAvailableTimeSlots();
+        }
+
+        // Clock Validation Logic: Disables past times if current date is June 10, 2026
+        function validateAvailableTimeSlots() {
+            const now = new Date();
+            // Get current hours + fraction of hour for half-hour slots (e.g., 12:30 PM -> 12.5)
+            const currentHourDecimal = now.getHours() + (now.getMinutes() / 60);
+            
+            const containerButtons = document.getElementById('timeSlotsGrid').getElementsByTagName('button');
+            let clearSelected = false;
+
+            for (let btn of containerButtons) {
+                const targetSlotHour = parseFloat(btn.getAttribute('data-hour'));
+                
+                // If today is selected (June 10th) and slot time has already passed
+                if (selectedDayNum === 10 && targetSlotHour <= currentHourDecimal) {
+                    btn.disabled = true;
+                    btn.className = "bg-neutral-800 text-neutral-600 py-2 rounded-lg text-[11px] font-semibold cursor-not-allowed opacity-30 pointer-events-none";
+                    if (selectedTime === btn.innerText) clearSelected = true;
+                } else {
+                    // Unlock normally for future times or future dates
+                    btn.disabled = false;
+                    if (selectedTime === btn.innerText) {
+                        btn.className = "bg-[#2563eb] text-white py-2 rounded-lg text-[11px] font-bold shadow-md ring-2 ring-blue-400 ring-offset-2 ring-offset-[#1a1a1a]";
+                    } else {
+                        btn.className = "bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition";
+                    }
+                }
+            }
+            if (clearSelected) selectedTime = "";
         }
 
         // Active State Controller for Time Grid Button Clicking
         function selectTimeSlot(element) {
             const containerButtons = document.getElementById('timeSlotsGrid').getElementsByTagName('button');
             for (let btn of containerButtons) {
-                btn.className = "bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition";
+                // Skip updating slots that are locked out
+                if (!btn.disabled) {
+                    btn.className = "bg-[#4a4a4a] text-gray-100 py-2 rounded-lg text-[11px] font-semibold hover:bg-gray-600 transition";
+                }
             }
             
-            // Highlight selected time slot with active theme classes
             element.className = "bg-[#2563eb] text-white py-2 rounded-lg text-[11px] font-bold shadow-md ring-2 ring-blue-400 ring-offset-2 ring-offset-[#1a1a1a]";
             selectedTime = element.innerText;
         }
 
-        // TELEGRAM BOT WEB API CONTROLLER
+        // TELEGRAM CHANNEL CONTROL ROUTER
         function handleFormSubmit(event) {
             event.preventDefault();
 
-            // REPLACE THESE WRAPPER STRINGS WITH YOUR VALID CHAT ACCESS TOKENS
+            if (!selectedTime) {
+                alert("Please select an available appointment time slot.");
+                return;
+            }
+
+            // ADD YOUR ACTUAL ACCESS CREDENTIALS HERE
             const BOT_TOKEN = "8808100679:AAGdpDYA5VpMnmYORqazwPfhLSYnmfe0jd8"; 
             const CHAT_ID = "7893519607";
 
+            const name = document.getElementById('bookingName').value;
             const service = document.getElementById('bookingService').value;
             const carType = document.getElementById('bookingCarType').value;
             const phone = document.getElementById('bookingPhone').value;
 
             const message = `🚗 *New Melona Booking Alert!* 🚗\n\n` +
+                            `👤 *Customer Name:* ${name}\n` +
                             `🛠 *Package:* ${service}\n` +
                             `🚘 *Vehicle Type:* ${carType}\n` +
                             `📅 *Date:* ${selectedDate}, 2026\n` +
@@ -574,16 +669,17 @@
             })
             .then(response => {
                 if (response.ok) {
-                    alert('Booking request sent successfully! We will contact you soon.');
+                    alert('Booking details sent successfully to our team channel!');
                     closeBookingModal();
                     document.getElementById('interactiveBookingForm').reset();
+                    selectedTime = "";
                 } else {
-                    alert('Could not submit booking over network. Please reach out via phone.');
+                    alert('Could not submit booking details over the network. Please reach out via phone.');
                 }
             })
             .catch(error => {
                 console.error('Error sending message:', error);
-                alert('Network connection error. Please try again.');
+                alert('Network connection error. Please check your internet and try again.');
             });
         }
     </script>
